@@ -1,4 +1,4 @@
-<h1>Editing Book</h1>
+
 <% if @user.errors.any? %>
 <%= @user.errors.count %> errors prohibited this book from being saved:
 <ul>
@@ -8,13 +8,26 @@
 </ul>
 <% end %>
 
-<h1>User info</h1>
+<p id="notice"></p>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12 col-md-8 col-lg-5 px-5 px-sm-0 mx-auto">
+<h2>User info</h2>
 <%= form_with model: @user do |f| %>
+<div class="form-group">
 <p>Name</p>
 <%= f.text_field :name %>
+</div>
+<div class="form-group">
 <p>image</p>
 <%= f.file_field :profile_image, accept: "image/*" %>
+</div>
+<div class="form-group">
 <p>introduction</p>
 <%= f.text_area :introduction %><br>
-<%= f.submit "Update User" %>
+</div>
+<%= f.submit "Update User", class: "btn btn-secondary" %>
 <% end %>
+</div>
+</div>
+</div>
