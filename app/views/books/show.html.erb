@@ -37,7 +37,9 @@
 <table class="table">
 <%= form_with model: @book do |f| %>
   <tr>
-    <th><%= image_tag @book.user.get_profile_image(100, 100) %><br>
+    <th><%= link_to user_path(@book.user.id) do %>
+    <%= image_tag @book.user.get_profile_image(100, 100) %>
+    <% end %><br>
     <%= link_to @book.user.name, user_path(@book.user.id) %></th>
     <th><%= link_to @book.title, book_path(@book.id) %></th>
     <th><%= @book.body %></th>
